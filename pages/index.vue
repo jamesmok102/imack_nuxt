@@ -58,9 +58,9 @@
     </div>
 
     <div class="bg-gray-300" style="">
-      <section class="pb-24 bg-gray-600 bg-cover bg-fixed clip h-5/6" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)), url(' + require('@/static/bigData.jpg') + ')'}">
+      <section class="pb-24 bg-gray-600 bg-cover bg-bottom bg-fixed clip h-5/6" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url(' + require('@/static/network-2402637.jpg') + ')'}">
         <div class="container m-auto" style="width: 100%; height: 100%;">
-          <img src="../static/imackWhiteNoBg2.png" class="lg:w-1/4 w-3/6" style="margin: auto; display: block; padding-top: 200px;">
+          <img src="../static/imack_whiteV2.png" class="lg:w-2/5 w-4/5" style="margin: auto; display: block; padding-top: 150px;">
         </div>
       </section>
     </div>
@@ -77,7 +77,7 @@
       <div class="container mx-auto">
         <h2 class="text-4xl text-center mb-14 font-light">Services</h2>
         <div class="grid lg:grid-cols-2 lg:gap-3 text-white">
-          <div class="bg-gray-300 lg:py-28 py-20 bg-cover " :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url(' + require('@/static/database2.jpg') + ')', 'height': '320px'}">
+          <div class="bg-gray-300 lg:py-28 py-20 bg-cover " :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/pexels-manuel-geissinger-325229.jpg') + ')', 'height': '320px'}">
             <div class="container mx-auto px-6" >
               <h2 class="text-2xl text-center mb-6 font-semibold">數據中心弱電工程</h2>
               <p class="leading-relaxed text-center font-semibold">
@@ -85,7 +85,7 @@
               </p>
             </div>
           </div>
-          <div class="bg-gray-300 py-28 bg-cover" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/cad.jpg') + ')', 'height': '320px'}">
+          <div class="bg-gray-300 py-28 bg-cover" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/pexels-matej-716661.jpg') + ')', 'height': '320px'}">
             <div class="container mx-auto">
               <h2 class="text-2xl text-center mb-6 font-semibold">實施工程</h2>
               <p class="leading-relaxed text-center font-semibold">
@@ -93,7 +93,7 @@
               </p>
             </div>
           </div>
-          <div class="bg-gray-300 py-28 bg-cover" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/led.png') + ')', 'height': '320px'}">
+          <div class="bg-gray-300 py-28 bg-cover" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/pexels-dzenina-lukac-754258.jpg') + ')', 'height': '320px'}">
             <div class="container mx-auto">
               <h2 class="text-2xl text-center mb-6 font-semibold">多媒體及影音系統</h2>
               <p class="leading-relaxed text-center font-semibold">
@@ -101,7 +101,7 @@
               </p>
             </div>
           </div>
-          <div class="bg-gray-300 py-28 bg-cover" style="height: 320px;" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url(' + require('@/static/close-up-man-writing-code-laptop.jpg') + ')', 'height': '320px'}">
+          <div class="bg-gray-300 py-28 bg-cover" style="height: 320px;" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/pexels-cottonbro-5483071.jpg') + ')', 'height': '320px'}">
             <div class="container mx-auto">
               <h2 class="text-2xl text-center mb-6 font-semibold">維修保養</h2>
               <p class="leading-relaxed text-center font-semibold">
@@ -131,7 +131,7 @@
       </div>
     </section>
 
-    <section id="contactus" class="py-24 bg-no-repeat bg-cover bg-fixed" :style="{'background-image': 'url(' + require('@/static/contactUsBgBlackFilter.png') + ')'}">
+    <section id="contactus" class="py-24 bg-no-repeat bg-cover bg-fixed" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/pexels-fauxels-3183127.jpg') + ')'}">
       <div class="container mx-auto max-w-4xl">
         <h2 class="text-4xl text-center mb-14 font-light text-white">Contact Us</h2>
         <div class="lg:flex">
@@ -158,8 +158,8 @@
     <footer class="py-20">
       <div class="container mx-auto max-w-5xl font-semibold">
         <div class="lg:flex">
-          <div class="flex-1">
-            <img src="@/static/imack.jpg" style="width: 100px;" class="mx-auto mb-3">
+          <div class="lg:flex-1 lg:mx-10">
+            <img src="@/static/imack_V2.png" style="width: 150px;" class="mx-auto mb-3">
           </div>
           <div class="flex-1 font-medium text-lg text-center lg:text-left mb-3">
             <p class="text-red-600">About</p>
