@@ -18,16 +18,19 @@ export default {
       //{ hid: 'og:type' , property: 'og:type' , content: 'website'},
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/imack_icon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/imack_icon.png' },
+      //{ rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'}
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src: '~plugins/map.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

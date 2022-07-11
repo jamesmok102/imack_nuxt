@@ -65,7 +65,7 @@
       </section>
     </div>
 
-    <section class="lg:py-24 py-16 bg-gray-300 h-96" id="aboutus">
+    <section class="lg:py-24 py-14 bg-gray-300 h-96" id="aboutus">
       <div class="container mx-auto max-w-5xl">
         <h2 class="text-4xl text-center mb-10 font-light">About us</h2>
         <p class="leading-relaxed text-center font-semibold lg:text-xl text-sm px-3">艾克方案有限公司成立於2013年，與天網資料科技(澳門)有限公司為同一集團旗下的子公司，主要業務為一站式先進數據中心規劃，實施交付，維護保養及弱電項目相關的安裝工程，
@@ -135,19 +135,35 @@
       <div class="container mx-auto max-w-4xl">
         <h2 class="text-4xl text-center mb-14 font-light text-white">Contact Us</h2>
         <div class="lg:flex">
-          <div class="lg:flex-1 mx-3 mb-10">
+          <!--<div class="lg:flex-1 mx-3 mb-10">
             <input type="text" class="h-10 pl-2 rounded-sm" placeholder="Name" style="display: block; width: 100%; margin-bottom: 20px;">
             <input type="text" class="h-10 pl-2 rounded-sm" placeholder="Email" style="display: block; width: 100%; margin-bottom: 20px;">
             <input type="text" class="h-10 pl-2 rounded-sm" placeholder="Phone" style="display: block; width: 100%; margin-bottom: 20px;">
             <textarea rows="6" placeholder="Message" class="pl-2 pt-2 rounded-sm" style="display: block; width: 100%; margin-bottom: 20px;"></textarea>
             <button class="px-7 py-2 text-white font-medium text-lg" style="background-color: #876924;">SUBMIT</button>
-          </div>
+          </div>-->
+          <l-map
+            ref="myMap"
+            :zoom="zoom"
+            :center="center"
+            :options="options"
+            style="height: 400px; width: 90vw; z-index: 0;"
+            class="lg:flex-1 mx-auto lg:mx-3 mb-10"
+          >
+            <l-tile-layer :url="url" :attribution="attribution" />
+            <l-marker ref="location" :lat-lng="center">
+              <l-popup>
+                艾克方案有限公司
+              </l-popup>
+            </l-marker>
+          </l-map>
           <div class="lg:flex-1 mx-3 text-white text-lg font-medium">
             <ul>
               <li class="pb-1 font-semibold"><img src="@/static/location-pin.png"  class="pb-1 pr-3" style="display: inline;">澳門宋玉生廣場258號建興龍廣場16樓S座</li>
               <li class="py-1 font-semibold"><img src="@/static/clock-circular-outline.png"  class="pb-1 pr-3" style="display: inline;">09:00-18:30</li>
               <li class="py-1 font-semibold"><img src="@/static/smartphone-call.png"  class="pb-1 pr-3" style="display: inline;">+85328701110</li>
               <li class="py-1 font-semibold"><img src="@/static/email.png"  class="pb-1 pr-3" style="display: inline;">info@imack.com.mo</li>
+              <li class="py-1 font-semibold"><img src="@/static/instagram.png"  class="pb-1 pr-3" style="display: inline;"><a href="https://www.instagram.com/imack_solutions/">imack_solutions(點擊進入IG)</a></li>
             </ul>
           </div>
 
@@ -225,6 +241,7 @@ a:hover {
 
 import {onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, ref} from "vue";
 
+
 export default {
   name: 'IndexPage',
   setup() {
@@ -258,9 +275,28 @@ export default {
         NavShow2.value = true;
       }
     }
+    let zoom = 19
+    let center = [22.18929,113.55135]
+    let options = {
+      //zoomControl: false,
+    }
+    let url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    let attribution = `© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors`
+    // const map = L.map('map', {
+    //   center: [22.18929,113.55135], // 中心點座標
+    //   zoom: 17, // 0 - 18
+    //   attributionControl: true, // 是否秀出「leaflet」的貢獻標記
+    //   zoomControl: true , // 是否秀出 - + 按鈕
+    // });
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
     return {
       NavShow,
       NavShow2,
+      zoom,
+      center,
+      options,
+      url,
+      attribution,
     }
   }
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
 <head {{ HEAD_ATTRS }}>
-  {{ HEAD }}
   <style>
     #loader {
       border: 12px solid #f3f3f3;
@@ -27,6 +26,7 @@
       margin: auto;
     }
   </style>
+  {{ HEAD }}
 </head>
 <body {{ BODY_ATTRS }}>
 <div id="loader" class="center"></div>
@@ -35,14 +35,14 @@
   document.onreadystatechange = function() {
     if (document.readyState !== "complete") {
       document.querySelector(
-        "#content").style.display = "none";
+        "body").style.visibility = "hidden";
       document.querySelector(
-        "#loader").style.display = "block";
+        "#loader").style.visibility = "visible";
     } else {
       document.querySelector(
-        "#loader").style.display = "none";
+        "#loader").style.visibility = "hidden";
       document.querySelector(
-        "#content").style.display = "block";
+        "body").style.visibility = "visible";
     }
   };
 </script>
