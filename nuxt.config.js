@@ -51,9 +51,9 @@ export default {
     publicPath: './_nuxt/'
   },
 
-  // router: {
-  //   base: "./"
-  // }
+  router: {
+    mode: "hash"
+  }
 
 
 }
