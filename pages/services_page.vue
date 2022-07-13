@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <SubNav home="/" about_us="/aboutus" services="/services" experience="/experience_page" sales_agent="/salesagent" contact_us="/contactus"/>
+    <SubNav home="/" about_us="/aboutus_page" services="/services_page" experience="/experience_page" sales_agent="/salesagent_page" contact_us="/contactus_page"/>
 
     <SubBanner title="Service" />
 

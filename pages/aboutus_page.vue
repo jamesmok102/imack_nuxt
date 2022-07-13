@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <SubNav home="/" about_us="/aboutus" services="/services" experience="/experience_page" sales_agent="/salesagent" contact_us="/contactus"/>
+    <SubNav home="/" about_us="/aboutus_page" services="/services_page" experience="/experience_page" sales_agent="/salesagent_page" contact_us="/contactus_page"/>
 
 <!--    <div class="h-96" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url(' + require('@/static/network-2402637.jpg') + ')'}">-->
 <!--      <div class="" style="height: 100%;">-->

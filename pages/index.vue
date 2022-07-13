@@ -2,65 +2,65 @@
 
   <div id="content">
 
-    <MainNav home="#" about_us="#aboutus" services="#services" experience="#experience" sales_agent="#salesagent" contact_us="#contactus"/>
+<!--    <MainNav home="#" about_us="#aboutus" services="#services" experience="#experience" sales_agent="#salesagent" contact_us="#contactus"/>-->
 
-<!--    <input type="checkbox" name="/" id= "side-menu-switch">-->
+    <input type="checkbox" name="/" id= "side-menu-switch">
 
-<!--    <div class="bg-white shadow side-menu" style="">-->
-<!--      <div class="px-3 py-3 text-xl font-medium">-->
-<!--        <span class="block py-3" style=""><a href="#">HOME</a></span>-->
-<!--        <span class="block py-3" style=""><a href="#aboutus">ABOUT</a></span>-->
-<!--        <span class="block py-3" style=""><a href="#services">SERVICES</a></span>-->
-<!--        <span class="block py-3" style=""><a href="#experience">EXPERIENCE</a></span>-->
-<!--        <span class="block py-3" style=""><a href="#salesagent">SALES AGENT</a></span>-->
-<!--        <span class="block py-3" style=""><a href="#contactus">CONTACT US</a></span>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="bg-white shadow side-menu" style="">
+      <div class="px-3 py-3 text-xl font-medium">
+        <span class="block py-3" style=""><a @click="goAnchor(0)">HOME</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
+      </div>
+    </div>
 
-<!--    <div class=" nav" v-show="NavShow">-->
-<!--      <div class="lg:hidden block container text-white">-->
-<!--        <label for="side-menu-switch"><img src="@/static/list.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>-->
-<!--        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">-->
-<!--      </div>-->
+    <div class=" nav" v-show="NavShow">
+      <div class="lg:hidden block container text-white">
+        <label for="side-menu-switch"><img src="@/static/list.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
+        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
+      </div>
 
-<!--      <div class="container mx-auto max-w-5xl lg:flex text-white font-medium text-xl items-center hidden">-->
-<!--        <div class="flex-1 flex justify-end" style="">-->
-<!--          <span class="text-center pr-5" style=""><a href="#">HOME</a></span>-->
-<!--          <span class="text-center pr-5" style=""><a href="#aboutus">ABOUT</a></span>-->
-<!--          <span class="text-center pr-5" style=""><a href="#services">SERVICES</a></span>-->
-<!--        </div>-->
-<!--        <div class="flex-shrink flex justify-center">-->
-<!--          <img class="py-3" src="@/static/imackNoBg.png" style="width: 80px;">-->
-<!--        </div>-->
-<!--        <div class="flex-1 flex">-->
-<!--          <span class="text-center pl-5" style=""><a href="#experience">EXPERIENCE</a></span>-->
-<!--          <span class="text-center pl-5" style=""><a href="#salesagent">SALES AGENT</a></span>-->
-<!--          <span class="text-center pl-5" style=""><a href="#contactus">CONTACT US</a></span>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+      <div class="container mx-auto max-w-5xl lg:flex text-white font-medium text-xl items-center hidden">
+        <div class="flex-1 flex justify-end" style="">
+          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
+        </div>
+        <div class="flex-shrink flex justify-center">
+          <img class="py-3" src="@/static/imackNoBg.png" style="width: 80px;">
+        </div>
+        <div class="flex-1 flex">
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
+        </div>
+      </div>
+    </div>
 
-<!--    <div class="bg-white nav shadow" v-show="NavShow2">-->
-<!--      <div class="lg:hidden block container text-white">-->
-<!--        <label for="side-menu-switch"><img src="@/static/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>-->
-<!--        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">-->
-<!--      </div>-->
-<!--      <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">-->
-<!--        <div class="flex-1 flex justify-end" style="">-->
-<!--          <span class="text-center pr-5" style=""><a href="#">HOME</a></span>-->
-<!--          <span class="text-center pr-5" style=""><a href="#aboutus">ABOUT</a></span>-->
-<!--          <span class="text-center pr-5" style=""><a href="#services">SERVICES</a></span>-->
-<!--        </div>-->
-<!--        <div class="flex-shrink flex justify-center">-->
-<!--          <img class="py-3" src="../static/imackNoBg.png" style="width: 80px;">-->
-<!--        </div>-->
-<!--        <div class="flex-1 flex ">-->
-<!--          <span class="	text-center pl-5" style=""><a href="#experience">EXPERIENCE</a></span>-->
-<!--          <span class="	text-center pl-5" style=""><a href="#salesagent">SALES AGENT</a></span>-->
-<!--          <span class="	text-center pl-5" style=""><a href="#contactus">CONTACT US</a></span>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="bg-white nav shadow" v-show="NavShow2">
+      <div class="lg:hidden block container text-white">
+        <label for="side-menu-switch"><img src="@/static/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
+        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
+      </div>
+      <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">
+        <div class="flex-1 flex justify-end" style="">
+          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
+        </div>
+        <div class="flex-shrink flex justify-center">
+          <img class="py-3" src="../static/imackNoBg.png" style="width: 80px;">
+        </div>
+        <div class="flex-1 flex ">
+          <span class="	text-center pl-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
+          <span class="	text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
+          <span class="	text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -78,7 +78,7 @@
         <p class="leading-relaxed text-center font-semibold lg:text-xl text-sm px-3 mb-10">艾克方案有限公司成立於2013年，與天網資料科技(澳門)有限公司為同一集團旗下的子公司，主要業務為一站式先進數據中心規劃，實施交付，維護保養及弱電項目相關的安裝工程，
           同時我們與業界領導者一起攜手為澳門各類客戶提供IT弱電系統、中央控制系統，大型視訊牆影顯示系統，多媒體簡報系統及公共廣播系統等方案。</p>
         <div class="flex justify-center">
-          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/aboutus">More</nuxt-link></button>
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/aboutus_page">More</nuxt-link></button>
         </div>
       </div>
     </section>
@@ -121,7 +121,7 @@
           </div>
         </div>
         <div class="flex justify-center mt-7">
-          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/services">More</nuxt-link></button>
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/services_page">More</nuxt-link></button>
         </div>
       </div>
     </section>
@@ -163,7 +163,7 @@
           <img src="@/static/lux.png" style="width: 200px;"/>
         </div>
         <div class="flex justify-center">
-          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/salesagent">More</nuxt-link></button>
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/salesagent_page">More</nuxt-link></button>
         </div>
       </div>
     </section>
@@ -203,7 +203,9 @@
               <li class="py-1 font-semibold"><img src="@/static/instagram.png"  class="pb-1 pr-3" style="display: inline;"><a href="https://www.instagram.com/imack_solutions/">imack_solutions(點擊進入IG)</a></li>
             </ul>
           </div>
-
+        </div>
+        <div class="flex justify-center">
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded"><nuxt-link to="/contactus_page">More</nuxt-link></button>
         </div>
       </div>
     </section>
@@ -242,38 +244,38 @@
 .clip {
   clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
 }
-/*.nav {*/
-/*  //height: 110px;*/
-/*  position:fixed;*/
-/*  top:0;*/
-/*  left:0;*/
-/*  width:100%;*/
-/*  z-index:99;*/
-/*}*/
-/*a:hover {*/
-/*  text-decoration:underline;*/
-/*}*/
+.nav {
+  //height: 110px;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:99;
+}
+a:hover {
+  text-decoration:underline;
+}
 *, html {
   scroll-behavior: smooth !important;
 }
-/*.side-menu {*/
-/*  position:fixed;*/
-/*  top:63px;*/
-/*  left:0;*/
-/*  transform: translateX(-130%);*/
-/*  transition: 0.4s;*/
-/*  z-index:98;*/
-/*  width: 100%;*/
-/*}*/
-/*#side-menu-switch{*/
-/*  position: fixed;*/
-/*  top:0;*/
-/*  left:0;*/
-/*  opacity: 0;*/
-/*}*/
-/*#side-menu-switch:checked + .side-menu{*/
-/*  transform: translateX(0%);*/
-/*}*/
+.side-menu {
+  position:fixed;
+  top:63px;
+  left:0;
+  transform: translateX(-130%);
+  transition: 0.4s;
+  z-index:98;
+  width: 100%;
+}
+#side-menu-switch{
+  position: fixed;
+  top:0;
+  left:0;
+  opacity: 0;
+}
+#side-menu-switch:checked + .side-menu{
+  transform: translateX(0%);
+}
 </style>
 
 <script>
@@ -284,36 +286,47 @@ import {onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, ref} from "vue";
 export default {
   name: 'IndexPage',
   setup() {
-    // let NavShow = ref(true);
-    // let NavShow2 = ref(false);
-    // onMounted(()=>{
-    //   window.addEventListener('scroll', handleScroll)
-    // })
-    // onUnmounted(()=>{
-    //   window.removeEventListener('scroll', handleScroll)
-    // })
-    // const handleScroll = () => {
-    //   let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-    //   let offsetTop = document.querySelector('#aboutus').offsetTop - 100
-    //   console.log("offsetTop: ", offsetTop)
-    //   if (scrollTop < offsetTop) {
-    //     //console.log("top")
-    //     NavShow.value = true;
-    //   } else {
-    //     //console.log("bottom")
-    //     NavShow.value = false;
-    //   }
-    //   if (scrollTop <= 100) {
-    //     NavShow.value = true;
-    //     NavShow2.value = false;
-    //   } else if (scrollTop > 100 && scrollTop < offsetTop) {
-    //     NavShow.value = false;
-    //     NavShow2.value = false;
-    //   } else {
-    //     NavShow.value = false;
-    //     NavShow2.value = true;
-    //   }
-    // }
+    let NavShow = ref(true);
+    let NavShow2 = ref(false);
+    onMounted(()=>{
+      window.addEventListener('scroll', handleScroll)
+    })
+    onUnmounted(()=>{
+      window.removeEventListener('scroll', handleScroll)
+    })
+    const handleScroll = () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let offsetTop = document.querySelector('#aboutus').offsetTop - 100
+      console.log("offsetTop: ", offsetTop)
+      if (scrollTop < offsetTop) {
+        //console.log("top")
+        NavShow.value = true;
+      } else {
+        //console.log("bottom")
+        NavShow.value = false;
+      }
+      if (scrollTop <= 100) {
+        NavShow.value = true;
+        NavShow2.value = false;
+      } else if (scrollTop > 100 && scrollTop < offsetTop) {
+        NavShow.value = false;
+        NavShow2.value = false;
+      } else {
+        NavShow.value = false;
+        NavShow2.value = true;
+      }
+    }
+    const goAnchor = (selector) => {
+      let top = 0;
+      const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+      if (typeof selector === 'number') {
+        top = selector - scrollTop;
+      } else {
+        const anchor = document.querySelector(selector) || {offsetTop: 0};
+        top = anchor.offsetTop - scrollTop;
+      }
+      window.scrollBy({top, behavior: 'smooth'});
+    }
     let zoom = 19
     let center = [22.18929,113.55135]
     let options = {
@@ -329,13 +342,14 @@ export default {
     // });
     // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
     return {
-      // NavShow,
-      // NavShow2,
+      NavShow,
+      NavShow2,
       zoom,
       center,
       options,
       url,
       attribution,
+      goAnchor,
     }
   }
 }
