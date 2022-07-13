@@ -101,7 +101,7 @@
     <section id="contactus" class="py-24 bg-no-repeat bg-cover bg-fixed" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/img/contactus/pexels-fauxels-3183127.jpg') + ')'}">
       <div class="container mx-auto max-w-4xl">
         <h2 class="text-4xl text-center mb-14 font-light text-white wow animate__headShake animate__slow">{{ $t('title_contactus') }}</h2>
-        <div class="lg:flex" style="">
+        <div class="lg:flex lg:hidden block" style="">
           <l-map
             ref="myMap"
             :zoom="zoom"
