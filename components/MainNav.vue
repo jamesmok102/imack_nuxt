@@ -5,12 +5,12 @@
 
     <div class="bg-white shadow side-menu" style="">
       <div class="px-3 py-3 text-xl font-medium">
-        <span class="block py-3" style=""><a :href="home">HOME</a></span>
-        <span class="block py-3" style=""><a :href="about_us">ABOUT</a></span>
-        <span class="block py-3" style=""><a :href="services">SERVICES</a></span>
-        <span class="block py-3" style=""><a :href="experience">EXPERIENCE</a></span>
-        <span class="block py-3" style=""><a :href="sales_agent">SALES AGENT</a></span>
-        <span class="block py-3" style=""><a :href="contact_us">CONTACT US</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor(0)">HOME</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
       </div>
     </div>
 
@@ -20,19 +20,22 @@
         <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
       </div>
 
-      <div class="container mx-auto max-w-5xl lg:flex text-white font-medium text-xl items-center hidden">
+      <div class="container mx-auto max-w-7xl lg:flex text-white font-medium text-xl items-center hidden">
         <div class="flex-1 flex justify-end" style="">
-          <span class="text-center pr-5" style=""><a :href="home">HOME</a></span>
-          <span class="text-center pr-5" style=""><a :href="about_us">ABOUT</a></span>
-          <span class="text-center pr-5" style=""><a :href="services">SERVICES</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
         </div>
         <div class="flex-shrink flex justify-center">
           <img class="py-3" src="@/static/imackNoBg.png" style="width: 80px;">
         </div>
         <div class="flex-1 flex">
-          <span class="text-center pl-5" style=""><a :href="experience">EXPERIENCE</a></span>
-          <span class="text-center pl-5" style=""><a :href="sales_agent">SALES AGENT</a></span>
-          <span class="text-center pl-5" style=""><a :href="contact_us">CONTACT US</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
+          <span class="text-center pl-5" style=""><a>繁</a></span>
+          <span class="text-center pl-5" style=""><a>简</a></span>
+          <span class="text-center pl-5" style=""><a>ENG</a></span>
         </div>
       </div>
     </div>
@@ -44,17 +47,20 @@
       </div>
       <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">
         <div class="flex-1 flex justify-end" style="">
-          <span class="text-center pr-5" style=""><a :href="home">HOME</a></span>
-          <span class="text-center pr-5" style=""><a :href="about_us">ABOUT</a></span>
-          <span class="text-center pr-5" style=""><a :href="services">SERVICES</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
+          <span class="	text-center pr-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
         </div>
         <div class="flex-shrink flex justify-center">
           <img class="py-3" src="../static/imackNoBg.png" style="width: 80px;">
         </div>
         <div class="flex-1 flex ">
-          <span class="	text-center pl-5" style=""><a :href="experience">EXPERIENCE</a></span>
-          <span class="	text-center pl-5" style=""><a :href="sales_agent">SALES AGENT</a></span>
-          <span class="	text-center pl-5" style=""><a :href="contact_us">CONTACT US</a></span>
+          <span class="	text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
+          <span class="	text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
+          <span class="text-center pl-5" style=""><a>繁</a></span>
+          <span class="text-center pl-5" style=""><a>简</a></span>
+          <span class="text-center pl-5" style=""><a>ENG</a></span>
         </div>
       </div>
     </div>
@@ -100,7 +106,6 @@ import {onMounted, onUnmounted, ref} from "vue";
 
 export default {
   name: 'MainNav',
-  props: ['home', 'about_us', 'services', 'experience', 'sales_agent', 'contact_us'],
   setup(props) {
     let NavShow = ref(true);
     let NavShow2 = ref(false);
@@ -132,9 +137,21 @@ export default {
         NavShow2.value = true;
       }
     }
+    const goAnchor = (selector) => {
+      let top = 0;
+      const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+      if (typeof selector === 'number') {
+        top = selector - scrollTop;
+      } else {
+        const anchor = document.querySelector(selector) || {offsetTop: 0};
+        top = anchor.offsetTop - scrollTop;
+      }
+      window.scrollBy({top, behavior: 'smooth'});
+    }
     return {
       NavShow,
       NavShow2,
+      goAnchor,
     }
   }
 }

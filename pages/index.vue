@@ -2,65 +2,65 @@
 
   <div id="content">
 
-<!--    <MainNav home="#" about_us="#aboutus" services="#services" experience="#experience" sales_agent="#salesagent" contact_us="#contactus"/>-->
+    <MainNav />
 
     <input type="checkbox" name="/" id= "side-menu-switch">
 
-    <div class="bg-white shadow side-menu" style="">
-      <div class="px-3 py-3 text-xl font-medium">
-        <span class="block py-3" style=""><a @click="goAnchor(0)">HOME</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
-      </div>
-    </div>
+<!--    <div class="bg-white shadow side-menu" style="">-->
+<!--      <div class="px-3 py-3 text-xl font-medium">-->
+<!--        <span class="block py-3" style=""><a @click="goAnchor(0)">HOME</a></span>-->
+<!--        <span class="block py-3" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>-->
+<!--        <span class="block py-3" style=""><a @click="goAnchor('#services')">SERVICES</a></span>-->
+<!--        <span class="block py-3" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>-->
+<!--        <span class="block py-3" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>-->
+<!--        <span class="block py-3" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class=" nav" v-show="NavShow">
-      <div class="lg:hidden block container text-white">
-        <label for="side-menu-switch"><img src="@/static/list.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
-        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
-      </div>
+<!--    <div class=" nav" v-show="NavShow">-->
+<!--      <div class="lg:hidden block container text-white">-->
+<!--        <label for="side-menu-switch"><img src="@/static/list.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>-->
+<!--        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">-->
+<!--      </div>-->
 
-      <div class="container mx-auto max-w-5xl lg:flex text-white font-medium text-xl items-center hidden">
-        <div class="flex-1 flex justify-end" style="">
-          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
-        </div>
-        <div class="flex-shrink flex justify-center">
-          <img class="py-3" src="@/static/imackNoBg.png" style="width: 80px;">
-        </div>
-        <div class="flex-1 flex">
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
-        </div>
-      </div>
-    </div>
+<!--      <div class="container mx-auto max-w-5xl lg:flex text-white font-medium text-xl items-center hidden">-->
+<!--        <div class="flex-1 flex justify-end" style="">-->
+<!--          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>-->
+<!--          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>-->
+<!--          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>-->
+<!--        </div>-->
+<!--        <div class="flex-shrink flex justify-center">-->
+<!--          <img class="py-3" src="@/static/imackNoBg.png" style="width: 80px;">-->
+<!--        </div>-->
+<!--        <div class="flex-1 flex">-->
+<!--          <span class="text-center pl-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>-->
+<!--          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>-->
+<!--          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="bg-white nav shadow" v-show="NavShow2">
-      <div class="lg:hidden block container text-white">
-        <label for="side-menu-switch"><img src="@/static/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
-        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
-      </div>
-      <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">
-        <div class="flex-1 flex justify-end" style="">
-          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
-        </div>
-        <div class="flex-shrink flex justify-center">
-          <img class="py-3" src="../static/imackNoBg.png" style="width: 80px;">
-        </div>
-        <div class="flex-1 flex ">
-          <span class="	text-center pl-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
-          <span class="	text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
-          <span class="	text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
-        </div>
-      </div>
-    </div>
+<!--    <div class="bg-white nav shadow" v-show="NavShow2">-->
+<!--      <div class="lg:hidden block container text-white">-->
+<!--        <label for="side-menu-switch"><img src="@/static/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>-->
+<!--        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">-->
+<!--      </div>-->
+<!--      <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">-->
+<!--        <div class="flex-1 flex justify-end" style="">-->
+<!--          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>-->
+<!--          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>-->
+<!--          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>-->
+<!--        </div>-->
+<!--        <div class="flex-shrink flex justify-center">-->
+<!--          <img class="py-3" src="../static/imackNoBg.png" style="width: 80px;">-->
+<!--        </div>-->
+<!--        <div class="flex-1 flex ">-->
+<!--          <span class="	text-center pl-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>-->
+<!--          <span class="	text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>-->
+<!--          <span class="	text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
 
