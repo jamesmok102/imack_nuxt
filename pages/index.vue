@@ -101,14 +101,14 @@
     <section id="contactus" class="py-24 bg-no-repeat bg-cover bg-fixed" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/img/contactus/pexels-fauxels-3183127.jpg') + ')'}">
       <div class="container mx-auto max-w-4xl">
         <h2 class="text-4xl text-center mb-14 font-light text-white wow animate__headShake animate__slow">{{ $t('title_contactus') }}</h2>
-        <div class="lg:flex">
+        <div class="lg:flex" style="">
           <l-map
             ref="myMap"
             :zoom="zoom"
             :center="center"
             :options="options"
             style="height: 400px; width: 90vw; z-index: 0;"
-            class="lg:flex-1 mx-auto lg:mx-3 mb-10 wow animate__headShake animate__slow"
+            class="lg:flex-1 mx-auto lg:mx-3 mb-10 "
           >
             <l-tile-layer :url="url" :attribution="attribution" />
 <!--            <l-marker ref="location" :lat-lng="center">-->
@@ -117,7 +117,7 @@
 <!--              </l-popup>-->
 <!--            </l-marker>-->
           </l-map>
-          <div class="lg:flex-1 mx-3 text-white text-lg font-medium wow animate__headShake animate__slow">
+          <div class="lg:flex-1 mx-3 text-white text-lg font-medium animate__headShake animate__slow">
             <ul>
               <li class="pb-1 font-semibold"><img src="@/static/img/contactus/location-pin.png" class="pb-1 pr-3" style="display: inline;">澳門宋玉生廣場258號建興龍廣場16樓S座</li>
               <li class="py-1 font-semibold"><img src="@/static/img/contactus/clock-circular-outline.png" class="pb-1 pr-3" style="display: inline;">09:00-18:30</li>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="flex justify-center">
-          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__headShake animate__slow"><nuxt-link :to="localePath('/contactus_page')">More</nuxt-link></button>
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded animate__headShake animate__slow"><nuxt-link :to="localePath('/contactus_page')">More</nuxt-link></button>
         </div>
       </div>
     </section>
@@ -159,7 +159,7 @@ export default {
       nextTick(()=>{
         if (process.client) {  // 在页面mounted生命周期里面 根据环境实例化WOW
           const { WOW } = require("wowjs")
-          new WOW({animateClass: 'animate__animated'}).init()
+          new WOW({animateClass: 'animate__animated', mobile: 'false'}).init()
         }
       })
     })
