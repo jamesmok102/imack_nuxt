@@ -11,7 +11,7 @@
 
     <SubBanner :title="$t('title_about')" />
 
-    <section class="lg:py-24 py-14 h-96" id="aboutus">
+    <section class="lg:py-24 py-14 h-96">
       <div class="container mx-auto max-w-5xl">
         <h2 class="text-4xl text-center mb-10 font-light">{{ $t('title_about') }}</h2>
         <p class="leading-relaxed text-center font-semibold lg:text-xl text-sm px-3 mb-10">艾克方案有限公司成立於2013年，與天網資料科技(澳門)有限公司為同一集團旗下的子公司，主要業務為一站式先進數據中心規劃，實施交付，維護保養及弱電項目相關的安裝工程，

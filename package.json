@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@neneos/nuxt-animate.css": "^0.0.1",
     "@nuxtjs/i18n": "^7.2.2",
     "core-js": "^3.19.3",
     "leaflet": "^1.8.0",
@@ -23,6 +24,7 @@
     "@nuxtjs/tailwindcss": "^4.2.1",
     "postcss": "^8.4.4",
     "sass": "^1.53.0",
-    "sass-loader": "^10.3.1"
+    "sass-loader": "^10.3.1",
+    "wowjs": "^1.1.3"
   }
 }

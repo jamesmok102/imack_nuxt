@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div class="bg-white nav shadow" v-show="NavShow2">
+    <div class="bg-white nav shadow" v-show="NavShow2" id="white_nav">
       <div class="lg:hidden block container text-white">
         <label for="side-menu-switch"><img src="~/static/img/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
         <img src="~/static/img/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
@@ -152,7 +152,7 @@ export default {
     const handleScroll = () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       let offsetTop = document.querySelector('#aboutus').offsetTop - 100
-      console.log("offsetTop: ", offsetTop)
+      //console.log("offsetTop: ", offsetTop)
       if (scrollTop < offsetTop) {
         //console.log("top")
         NavShow.value = true;
@@ -167,6 +167,7 @@ export default {
         NavShow.value = false;
         NavShow2.value = false;
       } else {
+        document.getElementById('white_nav').classList.add("animate__animated", "animate__slideInDown", "animate__faster");
         NavShow.value = false;
         NavShow2.value = true;
       }
@@ -178,7 +179,7 @@ export default {
         top = selector - scrollTop;
       } else {
         const anchor = document.querySelector(selector) || {offsetTop: 0};
-        top = anchor.offsetTop - scrollTop;
+        top = anchor.offsetTop - scrollTop - 90;
       }
       window.scrollBy({top, behavior: 'smooth'});
     }

@@ -1,6 +1,8 @@
 <template>
   <div>
 
+    <no-ssr>
+
     <SubNav />
 
     <SubBanner :title="$t('title_experience')" />
@@ -33,6 +35,8 @@
     </section>
 
     <MainFooter/>
+
+    </no-ssr>
 
   </div>
 </template>

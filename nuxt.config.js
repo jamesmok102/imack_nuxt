@@ -2,6 +2,14 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  render: {
+    resourceHints: false,
+  },
+
+  performance: {
+    prefetch: false,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '艾克方案有限公司 - iMACK Solutions Co., Ltd (beta)',
@@ -19,6 +27,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/imack_icon.png' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css' },
       //{ rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'}
     ]
   },
@@ -45,7 +54,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n',
-
+    '@neneos/nuxt-animate.css'
   ],
 
   i18n: {
@@ -85,7 +94,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: './_nuxt/'
+    publicPath: './'
   },
 
   router: {
