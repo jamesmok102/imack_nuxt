@@ -117,7 +117,7 @@
 <!--              </l-popup>-->
 <!--            </l-marker>-->
           </l-map>
-          <div class="lg:flex-1 mx-3 text-white text-lg font-medium animate__headShake animate__slow">
+          <div class="lg:flex-1 mx-3 text-white text-lg font-medium wow animate__headShake animate__slow">
             <ul>
               <li class="pb-1 font-semibold"><img src="@/static/img/contactus/location-pin.png" class="pb-1 pr-3" style="display: inline;">澳門宋玉生廣場258號建興龍廣場16樓S座</li>
               <li class="py-1 font-semibold"><img src="@/static/img/contactus/clock-circular-outline.png" class="pb-1 pr-3" style="display: inline;">09:00-18:30</li>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="flex justify-center">
-          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded animate__headShake animate__slow"><nuxt-link :to="localePath('/contactus_page')">More</nuxt-link></button>
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__headShake animate__slow"><nuxt-link :to="localePath('/contactus_page')">More</nuxt-link></button>
         </div>
       </div>
     </section>
@@ -159,7 +159,7 @@ export default {
       nextTick(()=>{
         if (process.client) {  // 在页面mounted生命周期里面 根据环境实例化WOW
           const { WOW } = require("wowjs")
-          new WOW({animateClass: 'animate__animated', mobile: 'false'}).init()
+          new WOW({animateClass: 'animate__animated'}).init()
         }
       })
     })
