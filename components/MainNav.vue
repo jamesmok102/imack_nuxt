@@ -1,3 +1,32 @@
+<!--<i18n>-->
+<!--  {-->
+<!--    "en": {-->
+<!--      "title_home": "Home",-->
+<!--      "title_about": "About",-->
+<!--      "title_services": "Services",-->
+<!--      "title_experience": "Experience",-->
+<!--      "title_salesagent": "Sales Agent",-->
+<!--      "title_contactus": "Contact Us"-->
+<!--    },-->
+<!--    "zh": {-->
+<!--      "title_home": "首頁",-->
+<!--      "title_about": "關於我們",-->
+<!--      "title_services": "服務",-->
+<!--      "title_experience": "經驗",-->
+<!--      "title_salesagent": "品牌代理",-->
+<!--      "title_contactus": "聯絡我們"-->
+<!--    },-->
+<!--    "cn": {-->
+<!--      "title_home": "首页",-->
+<!--      "title_about": "关于我们",-->
+<!--      "title_services": "服务",-->
+<!--      "title_experience": "经验",-->
+<!--      "title_salesagent": "品牌代理",-->
+<!--      "title_contactus": "联络我们"-->
+<!--    }-->
+<!--  }-->
+<!--</i18n>-->
+
 <template>
   <div>
 
@@ -5,62 +34,67 @@
 
     <div class="bg-white shadow side-menu" style="">
       <div class="px-3 py-3 text-xl font-medium">
-        <span class="block py-3" style=""><a @click="goAnchor(0)">HOME</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
-        <span class="block py-3" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor(0)">{{ $t('title_home') }}</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#aboutus')">{{ $t('title_about') }}</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#services')">{{ $t('title_services') }}</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
+        <span class="block py-3" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
+        <div class="block py-3">
+          <span class=" " style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
+          <span class=" " style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
+          <span class=" " style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
+        </div>
       </div>
     </div>
 
     <div class=" nav" v-show="NavShow">
       <div class="lg:hidden block container text-white">
-        <label for="side-menu-switch"><img src="@/static/list.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
-        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
+        <label for="side-menu-switch"><img src="~/static/img/list.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
+        <img src="~/static/img/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
       </div>
 
       <div class="container mx-auto max-w-7xl lg:flex text-white font-medium text-xl items-center hidden">
         <div class="flex-1 flex justify-end" style="">
-          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">{{ $t('title_home') }}</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">{{ $t('title_about') }}</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">{{ $t('title_services') }}</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
         </div>
         <div class="flex-shrink flex justify-center">
-          <img class="py-3" src="@/static/imackNoBg.png" style="width: 80px;">
+          <img class="py-3" src="~/static/img/imackNoBg.png" style="width: 80px;">
         </div>
         <div class="flex-1 flex">
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
-          <span class="text-center pl-5" style=""><a>繁</a></span>
-          <span class="text-center pl-5" style=""><a>简</a></span>
-          <span class="text-center pl-5" style=""><a>ENG</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
+          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
+          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
+          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
         </div>
       </div>
     </div>
 
     <div class="bg-white nav shadow" v-show="NavShow2">
       <div class="lg:hidden block container text-white">
-        <label for="side-menu-switch"><img src="@/static/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
-        <img src="@/static/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
+        <label for="side-menu-switch"><img src="~/static/img/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
+        <img src="~/static/img/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
       </div>
       <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">
         <div class="flex-1 flex justify-end" style="">
-          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">HOME</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">ABOUT</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">SERVICES</a></span>
-          <span class="	text-center pr-5" style=""><a @click="goAnchor('#experience')">EXPERIENCE</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor(0)">{{ $t('title_home') }}</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">{{ $t('title_about') }}</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">{{ $t('title_services') }}</a></span>
+          <span class="text-center pr-5" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
         </div>
         <div class="flex-shrink flex justify-center">
-          <img class="py-3" src="../static/imackNoBg.png" style="width: 80px;">
+          <img class="py-3" src="../static/img/imackNoBg.png" style="width: 80px;">
         </div>
         <div class="flex-1 flex ">
-          <span class="	text-center pl-5" style=""><a @click="goAnchor('#salesagent')">SALES AGENT</a></span>
-          <span class="	text-center pl-5" style=""><a @click="goAnchor('#contactus')">CONTACT US</a></span>
-          <span class="text-center pl-5" style=""><a>繁</a></span>
-          <span class="text-center pl-5" style=""><a>简</a></span>
-          <span class="text-center pl-5" style=""><a>ENG</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
+          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
+          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
+          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
+          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
         </div>
       </div>
     </div>
@@ -106,7 +140,7 @@ import {onMounted, onUnmounted, ref} from "vue";
 
 export default {
   name: 'MainNav',
-  setup(props) {
+  setup() {
     let NavShow = ref(true);
     let NavShow2 = ref(false);
     onMounted(()=>{

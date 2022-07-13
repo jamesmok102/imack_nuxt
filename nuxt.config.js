@@ -44,7 +44,44 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n',
+
   ],
+
+  i18n: {
+    locales: ['en', 'zh', 'cn'],
+    defaultLocale: 'zh',
+    vueI18nLoader: true,
+    vueI18n: {
+      fallbackLocale: 'zh',
+      messages: {
+        "en": {
+          "title_home": "Home",
+          "title_about": "About",
+          "title_services": "Services",
+          "title_experience": "Experience",
+          "title_salesagent": "Sales Agent",
+          "title_contactus": "Contact Us"
+        },
+        "zh": {
+          "title_home": "首頁",
+          "title_about": "關於我們",
+          "title_services": "服務",
+          "title_experience": "經驗",
+          "title_salesagent": "品牌代理",
+          "title_contactus": "聯絡我們"
+        },
+        "cn": {
+          "title_home": "首页",
+          "title_about": "关于我们",
+          "title_services": "服务",
+          "title_experience": "经验",
+          "title_salesagent": "品牌代理",
+          "title_contactus": "联络我们"
+        }
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

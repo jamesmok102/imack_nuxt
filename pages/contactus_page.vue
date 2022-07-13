@@ -1,13 +1,13 @@
 <template>
 <div>
 
-  <SubNav home="/" about_us="/aboutus_page" services="/services_page" experience="/experience_page" sales_agent="/salesagent_page" contact_us="/contactus_page"/>
+  <SubNav />
 
-  <SubBanner title="Contact Us" />
+  <SubBanner :title="$t('title_contactus')" />
 
   <section id="contactus" class="py-24 bg-no-repeat bg-cover bg-fixed" >
     <div class="container mx-auto max-w-4xl">
-      <h2 class="text-4xl text-center mb-14 font-light ">Contact Us</h2>
+      <h2 class="text-4xl text-center mb-14 font-light ">{{ $t('title_contactus') }}</h2>
       <div class="lg:flex">
         <!--<div class="lg:flex-1 mx-3 mb-10">
           <input type="text" class="h-10 pl-2 rounded-sm" placeholder="Name" style="display: block; width: 100%; margin-bottom: 20px;">
@@ -33,11 +33,11 @@
         </l-map>
         <div class="lg:flex-1 mx-3  text-lg font-medium">
           <ul>
-            <li class="pb-1 font-semibold"><img src="@/static/location-pin.png"  class="pb-1 pr-3" style="display: inline;">澳門宋玉生廣場258號建興龍廣場16樓S座</li>
-            <li class="py-1 font-semibold"><img src="@/static/clock-circular-outline.png"  class="pb-1 pr-3" style="display: inline;">09:00-18:30</li>
-            <li class="py-1 font-semibold"><img src="@/static/smartphone-call.png"  class="pb-1 pr-3" style="display: inline;">+85328701110</li>
-            <li class="py-1 font-semibold"><img src="@/static/email.png"  class="pb-1 pr-3" style="display: inline;">info@imack.com.mo</li>
-            <li class="py-1 font-semibold"><img src="@/static/instagram.png"  class="pb-1 pr-3" style="display: inline;"><a href="https://www.instagram.com/imack_solutions/">imack_solutions(點擊進入IG)</a></li>
+            <li class="pb-1 font-semibold"><img src="~/static/img/contactus/location-pin.png" class="pb-1 pr-3" style="display: inline;">澳門宋玉生廣場258號建興龍廣場16樓S座</li>
+            <li class="py-1 font-semibold"><img src="~/static/img/contactus/clock-circular-outline.png" class="pb-1 pr-3" style="display: inline;">09:00-18:30</li>
+            <li class="py-1 font-semibold"><img src="~/static/img/contactus/smartphone-call.png" class="pb-1 pr-3" style="display: inline;">+85328701110</li>
+            <li class="py-1 font-semibold"><img src="~/static/img/contactus/email.png" class="pb-1 pr-3" style="display: inline;">info@imack.com.mo</li>
+            <li class="py-1 font-semibold"><img src="~/static/img/contactus/instagram.png" class="pb-1 pr-3" style="display: inline;"><a href="https://www.instagram.com/imack_solutions/">imack_solutions(點擊進入IG)</a></li>
           </ul>
         </div>
 
