@@ -5,7 +5,7 @@
     <MainNav />
 
     <div class="bg-gray-300" style="">
-      <section class="pb-24  bg-cover bg-bottom bg-fixed clip h-5/6" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url(' + require('@/static/img/network-2402637.jpg') + ')'}">
+      <section class="pb-24  bg-cover bg-bottom bg-fixed clip h-5/6" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6),rgba(0,0,0,0.3)), url(' + require('@/static/img/index_bg.png') + ')'}"><!--network-2402637.jpg-->
         <div class="container m-auto" style="width: 100%; height: 100%;">
           <img src="@/static/img/imack_whiteV2.png" class="lg:w-2/5 w-4/5 wow animate__fadeInDown animate__slow" style="margin: auto; display: block; padding-top: 150px;">
         </div>
@@ -69,17 +69,18 @@
     <section class="py-24" id="experience">
       <div class="container mx-auto">
         <h2 class="text-4xl text-center mb-14 font-light wow animate__fadeInUp animate__slow">{{ $t('title_experience') }}</h2>
-        <div class="grid lg:grid-cols-3">
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/5c50e888096e85e49e63dfd34c1f28e.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/5eb7bc1e7e0098cb834fef19022b179.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/8e7d81514c945cfacc5bfc86bcdb88e.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/39d44968fa828dbd627384ab4ad3c05.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/a2382ebcb5a44cf4bdd32bfb484115f.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/c454861d269c315e532feea0b1a485c.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/d837d9ef68cd854d3f06bd3e7f02c47.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/d32320dcd5a2b2174d773a0a3c105e5.jpg" />
-          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/f5716207ef9611f56428b13a5415760.jpg" />
-        </div>
+<!--        <div class="grid lg:grid-cols-3">-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/5c50e888096e85e49e63dfd34c1f28e.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/5eb7bc1e7e0098cb834fef19022b179.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/8e7d81514c945cfacc5bfc86bcdb88e.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/39d44968fa828dbd627384ab4ad3c05.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/a2382ebcb5a44cf4bdd32bfb484115f.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/c454861d269c315e532feea0b1a485c.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/d837d9ef68cd854d3f06bd3e7f02c47.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/d32320dcd5a2b2174d773a0a3c105e5.jpg" />-->
+<!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/f5716207ef9611f56428b13a5415760.jpg" />-->
+<!--        </div>-->
+        <MainSwiper/>
         <div class="flex justify-center">
           <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__fadeInUp animate__slow"><nuxt-link :to="localePath('/experience_page')">More</nuxt-link></button>
         </div>
@@ -90,7 +91,7 @@
       <div class="container mx-auto">
         <h2 class="text-4xl text-center mb-14 font-light wow animate__bounceIn animate__slow">{{ $t('title_salesagent') }}</h2>
         <div class="flex justify-center mb-10 wow animate__bounceIn animate__slow">
-          <img src="@/static/img/salesagent/lux.png" style="width: 200px;"/>
+          <img src="@/static/img/salesagent/lux.png" style="width: 300px;"/>
         </div>
         <div class="flex justify-center">
           <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__bounceIn animate__slow"><nuxt-link :to="localePath('/salesagent_page')">More</nuxt-link></button>
@@ -113,11 +114,11 @@
             class="lg:flex-1 mx-auto lg:mx-3 mb-10 wow animate__headShake animate__slow"
           >
             <l-tile-layer :url="url" :attribution="attribution" />
-<!--            <l-marker ref="location" :lat-lng="center">-->
-<!--              <l-popup>-->
-<!--                艾克方案有限公司-->
-<!--              </l-popup>-->
-<!--            </l-marker>-->
+            <l-marker ref="location" :lat-lng="center">
+              <l-popup>
+                艾克方案有限公司
+              </l-popup>
+            </l-marker>
           </l-map>
           <div class="lg:flex-1 mx-3 text-white text-lg font-medium wow animate__headShake animate__slow">
             <ul>

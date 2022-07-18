@@ -54,22 +54,26 @@
         <img src="~/static/img/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
       </div>
 
-      <div class="container mx-auto max-w-7xl lg:flex text-white font-medium text-xl items-center hidden">
+      <div class="container mx-auto  lg:flex text-white font-medium text-xl items-center hidden">
         <div class="flex-1 flex justify-end" style="">
           <span class="text-center pr-5" style=""><a @click="goAnchor(0)">{{ $t('title_home') }}</a></span>
           <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">{{ $t('title_about') }}</a></span>
           <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">{{ $t('title_services') }}</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
         </div>
         <div class="flex-shrink flex justify-center">
           <img class="py-3" src="~/static/img/imackNoBg.png" style="width: 80px;">
         </div>
-        <div class="flex-1 flex">
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
-          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
-          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
-          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
+        <div class="flex-1 flex justify-between">
+          <div>
+            <span class="text-center pl-5" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
+            <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
+            <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
+          </div>
+          <div class="">
+            <span class="text-center pl-3" style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
+            <span class="text-center pl-3" style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
+            <span class="text-center pl-3" style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
+          </div>
         </div>
       </div>
     </div>
@@ -79,22 +83,26 @@
         <label for="side-menu-switch"><img src="~/static/img/list_black.png" style="width: 32px; display: inline-block" class="my-3 mx-3"></label>
         <img src="~/static/img/imackNoBg.png" style="width: 48px; display: inline-block" class="my-3">
       </div>
-      <div class="container mx-auto max-w-5xl lg:flex font-medium text-xl items-center hidden">
+      <div class="container mx-auto  lg:flex font-medium text-xl items-center hidden">
         <div class="flex-1 flex justify-end" style="">
           <span class="text-center pr-5" style=""><a @click="goAnchor(0)">{{ $t('title_home') }}</a></span>
           <span class="text-center pr-5" style=""><a @click="goAnchor('#aboutus')">{{ $t('title_about') }}</a></span>
           <span class="text-center pr-5" style=""><a @click="goAnchor('#services')">{{ $t('title_services') }}</a></span>
-          <span class="text-center pr-5" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
         </div>
         <div class="flex-shrink flex justify-center">
           <img class="py-3" src="../static/img/imackNoBg.png" style="width: 80px;">
         </div>
-        <div class="flex-1 flex ">
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
-          <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
-          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
-          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
-          <span class="text-center pl-5" style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
+        <div class="flex-1 flex justify-between">
+          <div>
+            <span class="text-center pl-5" style=""><a @click="goAnchor('#experience')">{{ $t('title_experience') }}</a></span>
+            <span class="text-center pl-5" style=""><a @click="goAnchor('#salesagent')">{{ $t('title_salesagent') }}</a></span>
+            <span class="text-center pl-5" style=""><a @click="goAnchor('#contactus')">{{ $t('title_contactus') }}</a></span>
+          </div>
+          <div class="">
+            <span class="text-center pl-3" style=""><nuxt-link :to="switchLocalePath('zh')">繁</nuxt-link></span>
+            <span class="text-center pl-3" style=""><nuxt-link :to="switchLocalePath('cn')">简</nuxt-link></span>
+            <span class="text-center pl-3" style=""><nuxt-link :to="switchLocalePath('en')">ENG</nuxt-link></span>
+          </div>
         </div>
       </div>
     </div>
@@ -151,7 +159,7 @@ export default {
     })
     const handleScroll = () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      let offsetTop = document.querySelector('#aboutus').offsetTop - 100
+      let offsetTop = document.querySelector('#aboutus').offsetTop - 400
       //console.log("offsetTop: ", offsetTop)
       if (scrollTop < offsetTop) {
         //console.log("top")

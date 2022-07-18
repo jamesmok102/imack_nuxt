@@ -27,11 +27,11 @@
           class="lg:flex-1 mx-auto lg:mx-3 mb-10"
         >
           <l-tile-layer :url="url" :attribution="attribution" />
-<!--          <l-marker ref="location" :lat-lng="center">-->
-<!--            <l-popup>-->
-<!--              艾克方案有限公司-->
-<!--            </l-popup>-->
-<!--          </l-marker>-->
+          <l-marker ref="location" :lat-lng="center">
+            <l-popup>
+              艾克方案有限公司
+            </l-popup>
+          </l-marker>
         </l-map>
         <div class="lg:flex-1 mx-3  text-lg font-medium">
           <ul>

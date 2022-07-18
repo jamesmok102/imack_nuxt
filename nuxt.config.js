@@ -34,12 +34,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-
+    //"swiper/css/swiper.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {src: '~plugins/map.js', ssr: false},
+    {src: '~/plugins/swiper.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -75,16 +76,16 @@ export default {
         "zh": {
           "title_home": "首頁",
           "title_about": "關於我們",
-          "title_services": "服務",
-          "title_experience": "經驗",
+          "title_services": "業務方案",
+          "title_experience": "個案分享",
           "title_salesagent": "品牌代理",
           "title_contactus": "聯絡我們"
         },
         "cn": {
           "title_home": "首页",
           "title_about": "关于我们",
-          "title_services": "服务",
-          "title_experience": "经验",
+          "title_services": "业务方案",
+          "title_experience": "个案分享",
           "title_salesagent": "品牌代理",
           "title_contactus": "联络我们"
         }
