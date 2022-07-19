@@ -80,7 +80,7 @@
 <!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/d32320dcd5a2b2174d773a0a3c105e5.jpg" />-->
 <!--          <ExperienceCard class="wow animate__fadeInUp animate__slow" img-src="./img/experience/f5716207ef9611f56428b13a5415760.jpg" />-->
 <!--        </div>-->
-        <MainSwiper/>
+        <MainSwiper :articles="articles"/>
         <div class="flex justify-center">
           <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__fadeInUp animate__slow"><nuxt-link :to="localePath('/experience_page')">More</nuxt-link></button>
         </div>
@@ -110,7 +110,7 @@
             :zoom="zoom"
             :center="center"
             :options="options"
-            style="height: 400px; width: 90vw; z-index: 0;"
+            style="height: 408px; width: 90vw; z-index: 0;"
             class="lg:flex-1 mx-auto lg:mx-3 mb-10 wow animate__headShake animate__slow"
           >
             <l-tile-layer :url="url" :attribution="attribution" />
@@ -120,7 +120,13 @@
               </l-popup>
             </l-marker>
           </l-map>
-          <div class="lg:flex-1 mx-3 text-white text-lg font-medium wow animate__headShake animate__slow">
+<!--          <div class="lg:flex-1 wow animate__headShake animate__slow">-->
+<!--            <input type="text" placeholder="Name" class="mb-5 text-xl p-3 rounded" style="width: 100%;">-->
+<!--            <input type="text" placeholder="Email" v-model="email" class="mb-5 text-xl p-3 rounded" style="width: 100%;">-->
+<!--            <input type="text" placeholder="Phone" class="mb-5 text-xl p-3 rounded" style="width: 100%;">-->
+<!--            <textarea placeholder="Message" rows="6" v-model="message" class="mb-5 text-xl p-3 rounded" style="width: 100%;" ></textarea>-->
+<!--          </div>-->
+          <div class="lg:flex-1 mx-3 text-white text-lg font-medium wow animate__headShake animate__slow mb-3">
             <ul>
               <li class="pb-1 font-semibold"><img src="@/static/img/contactus/location-pin.png" class="pb-1 pr-3" style="display: inline;">澳門宋玉生廣場258號建興龍廣場16樓S座</li>
               <li class="py-1 font-semibold"><img src="@/static/img/contactus/clock-circular-outline.png" class="pb-1 pr-3" style="display: inline;">09:00-18:30</li>
@@ -131,7 +137,8 @@
           </div>
         </div>
         <div class="flex justify-center">
-          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__headShake animate__slow"><nuxt-link :to="localePath('/contactus_page')">More</nuxt-link></button>
+          <button class="text-3xl text-white bg-gray-600 p-3 px-6 mr-3 rounded wow animate__headShake animate__slow"><nuxt-link :to="localePath('/contactus_page')">More</nuxt-link></button>
+<!--          <button class="text-3xl text-white bg-gray-600 p-3 px-6 rounded wow animate__headShake animate__slow" @click.prevent="send">Submit</button>-->
         </div>
       </div>
     </section>
@@ -155,11 +162,22 @@
 
 <script>
 
-import {nextTick, onMounted, onUnmounted} from "vue";
+import {nextTick, onMounted, onUnmounted, ref} from "vue";
 
 export default {
   name: 'IndexPage',
+  async asyncData({app}) {
+    const res = await app.$storyapi.get('cdn/stories', {
+      starts_with: 'experience/',
+    })
+    const articles = res.data.stories.map((story) => {
+      story.content.date = new Date(story.content.date)
+      return story
+    })
+    return { articles }
+  },
   setup() {
+
     onMounted(()=>{
       nextTick(()=>{
         if (process.client) {  // 在页面mounted生命周期里面 根据环境实例化WOW
@@ -182,6 +200,19 @@ export default {
       url,
       attribution,
     }
-  }
+  },
+  // data: () => ({
+  //   email: '',
+  //   message: '',
+  // }),
+  // methods: {
+  //   send() {
+  //     this.$axios.$post('/mail/send', {
+  //       from: this.email,
+  //       subject: 'Contact form message',
+  //       text: this.message,
+  //     })
+  //   }
+  // }
 }
 </script>

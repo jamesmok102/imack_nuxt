@@ -1,8 +1,8 @@
 <template>
   <no-ssr>
-    <div v-swiper:mySwiper="swiperOption" style="width: 100%;" class="bg-gray-300 mb-20 rounded">
+    <div v-swiper:mySwiper="swiperOption" style="width: 100%;" class=" mb-20 rounded bg-cover" :style="{'background-image': 'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url(' + require('@/static/img/services/pexels-cottonbro-5483071.jpg') + ')'}">
       <div class="swiper-wrapper" style="">
-        <div class="swiper-slide" v-for="item in list" :key="item.id">
+        <div class="swiper-slide" v-for="article in articles" >
           <div class="flex justify-center">
 <!--            <img-->
 <!--              :src="item.imgSrc"-->
@@ -10,22 +10,24 @@
 <!--              style="height: 352px; border-radius: 8px"-->
 <!--              alt=""-->
 <!--            />-->
-            <ExperienceCard :img-src="item.imgSrc" />
+            <ExperienceCard :img-src="article.content.Avatar.filename" />
           </div>
-          <p class="text-3xl mb-5 text-center">{{item.title}}</p>
+          <p class="text-3xl mb-5 text-center text-white">{{article.content.title}}</p>
         </div>
       </div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-      <div class="swiper-pagination"></div>
+<!--      <div class="swiper-pagination"></div>-->
     </div>
   </no-ssr>
 </template>
 
 <script>
+
 export default {
   name: "MainSwiper",
-  setup() {
+  props: ['articles'],
+  setup(props) {
     const list = [
       {
         imgSrc: "./img/experience/5c50e888096e85e49e63dfd34c1f28e.jpg",
@@ -70,9 +72,9 @@ export default {
         nextEl: '.swiper-button-next'
       },
       pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        type: 'progressbar',
+        //el: '.swiper-pagination',
+        //clickable: true,
+        //type: 'progressbar',
       },
       loop: true,
       slidesPerView: 1,
@@ -88,15 +90,21 @@ export default {
     return {
       swiperOption,
       list,
+
     }
-  }
+  },
 
 
 };
 </script>
 
 <style lang="scss" scoped>
-
+.swiper-button-prev {
+  color: #bb9543
+}
+.swiper-button-next {
+  color: #bb9543
+}
 </style>
 
 

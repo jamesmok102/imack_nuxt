@@ -55,7 +55,15 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n',
-    '@neneos/nuxt-animate.css'
+    '@neneos/nuxt-animate.css',
+    '@nuxtjs/axios',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken:  'KUuS6QJAAG9GOrUoCvDDQgtt',
+        cacheProvider: 'memory'
+      }
+    ]
   ],
 
   i18n: {
